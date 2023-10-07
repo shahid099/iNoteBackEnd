@@ -1,0 +1,69 @@
+# User creating Login Signup
+# CreateUser or Signup
+POST http://localhost:5000/inote/createuser
+Accept: */*
+Content-Type: application/json
+{
+    "name": "Muhammad Shahid",
+    "email": "shahidmuhammadshahid099@gmail.com",
+    "password": "34502abcABC#*"
+}
+
+###
+# Login User
+send Request
+POST http://localhost:5000/inote/loginuser
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMzUyMDE0YmRkNWNmNzJlMzkxZmNlIn0sImlhdCI6MTY5NDcxNjQxN30.FsslWARjKQ65J5PM5QxMjUWDGB6WESf51eBadMRe49k
+
+{
+  "email": "shahid@gmail.com",
+  "password": "shahid"
+}
+
+###
+# Get the user
+POST http://localhost:5000/inote/getuser
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMzUyMDE0YmRkNWNmNzJlMzkxZmNlIn0sImlhdCI6MTY5NDcxNjQxN30.FsslWARjKQ65J5PM5QxMjUWDGB6WESf51eBadMRe49k
+
+###
+
+
+# Notes Creatinon Section
+# Create Notes
+POST http://localhost:5000/inote/createnotes
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwM2Y2ZWExOGVmZTc5MDU2ZDExN2RjIn0sImlhdCI6MTY5NDc1ODY4N30.k0RPylKnopgdE0mMdCDPWygcJR8ZcMoq-OLCTEQghuM
+
+{
+  "title": "Oman Sim Buy",
+  "description": "I go the the market with a Brother and buy a SIM of the Company Ooorido. The SIM NO is 97167796."
+}
+
+###
+
+# Get Notes 
+GET http://localhost:5000/inote/fetchnotes
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwM2Y2ZWExOGVmZTc5MDU2ZDExN2RjIn0sImlhdCI6MTY5NDc1ODY4N30.k0RPylKnopgdE0mMdCDPWygcJR8ZcMoq-OLCTEQghuM
+
+
+###
+#Update Note
+PUT http://localhost:5000/inote/updatenote/6503f8caccfbbb264ebb9d1b
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwM2Y2ZWExOGVmZTc5MDU2ZDExN2RjIn0sImlhdCI6MTY5NDc1ODY4N30.k0RPylKnopgdE0mMdCDPWygcJR8ZcMoq-OLCTEQghuM
+
+{
+  "title": "Oman Sim Buy UPDATED",
+  "description": "I go the the market with a Brother and buy a SIM of the Company Ooorido. The SIM NO is 97167796 UPDATED.",
+  "tag": "Advanture"
+}
+
+###
+#Delete the Note
+DELETE http://localhost:5000/inote/deletenote/6503f7e718efe79056d117f1
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwM2Y2ZWExOGVmZTc5MDU2ZDExN2RjIn0sImlhdCI6MTY5NDc1ODY4N30.k0RPylKnopgdE0mMdCDPWygcJR8ZcMoq-OLCTEQghuM
+
